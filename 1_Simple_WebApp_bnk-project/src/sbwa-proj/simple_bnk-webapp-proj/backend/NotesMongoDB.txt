@@ -1,0 +1,18 @@
+Zainstalować framework do backendu: express.js
+# npm i express.js [ aby zainstalować poprzez terminal ]
+
+MongoDB [konfiguracja 1-2]
+# stworzyc nowy klaster (Create idt) => [set up => user and password]
+# wybrać nowo utworzonu klaster, a następnie:
+# => Network Access => Add IP Address (0.0.0.0/0)
+# => Database Access => Add New Database User [imie jako haslo i login]
+MongoDB [konfiguracja 2-2]
+# npm i mongoose [ zainstalować rozszerzenie MongoDB w terminalu
+aby móc się połączyć sie z bazą danych MongoDB ]
+# MongoDB Deployment => cluster0 => Connect => MongoDB for VS Code
+=> 3. Connect to your [id... copy]
+
+Aby uruchomić nasz backend trzeba wpisać w terminalu: node app.js
+
+Dodatkowa biblioteka do instalacji
+# npm i bcrypt [terminal] => install encryption library
