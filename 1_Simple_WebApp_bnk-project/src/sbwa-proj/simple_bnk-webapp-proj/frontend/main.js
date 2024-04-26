@@ -23,33 +23,49 @@ window.onclick = function (event) {
     }
 }
 
-// Obsługa formularza rejestracji
+//Obsługa formularza rejestracji:
 
-conts nameInput = document.querySelector('input[name=name]').value
-const surnameInput = document.querySelector('input[name=surname]').value
-conts peselInput = document.querySelector('input[name=pesel]').value
+const nameInput = document.querySelector('input[name=name]')
+const surnameInput = document.querySelector('input[name=surname]')
+const peselInput = document.querySelector('input[name=pesel]')
 
 const validTexts = document.querySelectorAll('.register small')
 
-console.log(nameInput)
-
 async function createAccount() {
-	
-	if(name == null || name == undefinied) {
-		validTexts[0].style.visibility = 'visible'
-	}
-    
-    const formData = {
-        name: nameInput.value // 'Ola',
-        surname: surnameInput.value // 'Nalepa',
-        pesel: peselInput.value // '3455424234'
-    }
-	
-	console.log(formData)
 
-    //await fetch('http://localhost:3333/register', {
-    //    method: 'POST',
-    //    headers: { 'Content-Type': 'application/json' },
-    //    body: JSON.stringify(formData)
-    //})
+    const name = nameInput.value
+    const surname = surnameInput.value
+    const pesel = peselInput.value
+
+    if (name == '') {
+        validTexts[0].style.visibility = 'visible'
+    } else {
+        validTexts[0].style.visibility = 'hidden'
+    }
+
+    if (surname == '') {
+        validTexts[1].style.visibility = 'visible'
+    } else {
+        validTexts[1].style.visibility = 'hidden'
+    }
+
+    if (pesel.length != 11) {
+        validTexts[2].style.visibility = 'visible'
+    } else {
+        validTexts[2].style.visibility = 'hidden'
+    }
+
+    const formData = {
+        name: name,
+        surname: surname,
+        pesel: pesel
+    }
+
+    console.log(formData)
+
+    // await fetch('http://localhost:3333/register', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(formData)
+    // })
 }
