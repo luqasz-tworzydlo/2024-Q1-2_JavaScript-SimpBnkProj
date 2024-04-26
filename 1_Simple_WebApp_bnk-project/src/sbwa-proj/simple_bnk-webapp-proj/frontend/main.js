@@ -23,18 +23,33 @@ window.onclick = function (event) {
     }
 }
 
+// Obsługa formularza rejestracji
+
+conts nameInput = document.querySelector('input[name=name]').value
+const surnameInput = document.querySelector('input[name=surname]').value
+conts peselInput = document.querySelector('input[name=pesel]').value
+
+const validTexts = document.querySelectorAll('.register small')
+
+console.log(nameInput)
 
 async function createAccount() {
+	
+	if(name == null || name == undefinied) {
+		validTexts[0].style.visibility = 'visible'
+	}
     
     const formData = {
-        nama: 'Ola',
-        surname: 'Nalepa',
-        pesel: '3455424234'
+        name: nameInput.value // 'Ola',
+        surname: surnameInput.value // 'Nalepa',
+        pesel: peselInput.value // '3455424234'
     }
+	
+	console.log(formData)
 
-    await fetch('http://localhost:3333/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-    })
+    //await fetch('http://localhost:3333/register', {
+    //    method: 'POST',
+    //    headers: { 'Content-Type': 'application/json' },
+    //    body: JSON.stringify(formData)
+    //})
 }
