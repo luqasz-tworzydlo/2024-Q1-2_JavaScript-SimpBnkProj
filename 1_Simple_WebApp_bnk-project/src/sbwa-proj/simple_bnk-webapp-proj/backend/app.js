@@ -10,7 +10,6 @@ app.post('/register', function (req, res) {
     const clientData = req.body
 
     console.log(clientData)
-    res.send("register ok")
 })
 
 app.get('/get-account', function (req, res) {
